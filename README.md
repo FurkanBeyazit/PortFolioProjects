@@ -42,7 +42,7 @@ Seoul 2021 Car accidents official data preparing for data analysis and more
 Web Scraping from Amazon with Microsoft Edge Selenium Python library and and making a csv data file which includes price name etc...
 
 ## Project Status
-R Project is: _in progress_ 
+R Project is: _in progress_ <br>
 TensorFlow Project is:  _in progress_ 
 
 ## Contact
