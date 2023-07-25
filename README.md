@@ -7,9 +7,9 @@
 * [Visualization Covid data with **Tableau**](#tableau-project)
 * [Data Professionals Survey **Power BI** report](#powerbi-project)
 * [Python Projects](#python-projects)
- <br> -[Famous Movies dataset finding trends and flow in dataset **Python**]<br>
-  -[Cancer Diagnosis Predictions with **Python Machine Learning**]<br>
-  -[Preparing dataset for further analysis Seoul Car Accident dataset **Python**]
+ <br> -Famous Movies dataset finding trends and flow in dataset **Python**<br>
+  -Cancer Diagnosis Predictions with **Python Machine Learning**<br>
+  -Preparing dataset for further analysis Seoul Car Accident dataset **Python**
 * [Amazon Web Scraping with **Selenium Python**](#web-scraping)
 * [Project Status](#project-status)
 * [Contact](#contact)
