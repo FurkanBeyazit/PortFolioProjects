@@ -49,7 +49,7 @@ TensorFlow Project is:  _in progress_
 [Contact](https://www.linkedin.com/in/furkanbyagiz/) - feel free to contact me!
 
 
-## Korean
+## 한국어 설명하기
 __아직 확인 중__
 
 <!-- Optional -->
