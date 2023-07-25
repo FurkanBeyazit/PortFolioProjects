@@ -2,8 +2,11 @@ select *
 From PortfolioProject..CovidDeaths order by 3,4
 --select *
 --From PortfolioProject..CovidVaccinations order by 3,4
+-----------------------------------------------------------------
 
-**--select data that we are going to use**
+
+
+--select data that we are going to use
 select location,date,total_cases,new_cases,total_deaths,population from PortfolioProject..CovidDeaths order by 1,2
 
 --Looking at Total Cases vs Total Deaths 
