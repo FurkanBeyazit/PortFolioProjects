@@ -23,7 +23,7 @@ Total Cases vs Population <br>
 etc...
 
 ## Tableau Project
-Tableau Public [click here](https://duckduckgo.com).(./tableau.jpg)
+Tableau Public [click here]([https://duckduckgo.com](https://public.tableau.com/app/profile/furkan.yagiz/viz/CovidPortfolioProject_16870698928110/Dashboard1?publish=yes)).(./tableau.jpg)
 
 ## Powerbi Project
 
