@@ -23,7 +23,7 @@ Total Cases vs Population <br>
 etc...
 
 ## Tableau Project
-![Example screenshot](./img/screenshot.png)
+![Example screenshot](./tableau.jpg)
 
 ## Powerbi Project
 
