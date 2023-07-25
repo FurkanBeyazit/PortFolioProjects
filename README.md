@@ -13,7 +13,7 @@
 * [Amazon Web Scraping with **Selenium Python**](#web-scraping)
 * [Project Status](#project-status)
 * [Contact](#contact)
-* [Korean](#korean)
+* [Korean](#한국어-설명하기)
 <!-- * [License](#license) -->
 ## SQL Projects
 Data Exploration of Covid 19 Dataset in SQL Server<br>
