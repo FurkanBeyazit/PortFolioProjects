@@ -23,63 +23,34 @@ Total Cases vs Population <br>
 etc...
 
 ## Tableau Project
+Dataset is same with Covid project above
 Tableau Public [click here](https://public.tableau.com/app/profile/furkan.yagiz/viz/CovidPortfolioProject_16870698928110/Dashboard1?publish=yes)<br>
 ![tableau](./tableau.jpg)
 
 ## Powerbi Project
+630 Data Professionals survey data set which includes people's salary, age, favirote tool to use for data analysis, nationality, happiness with current job etc<br>
 PowerBi app [click here](https://app.powerbi.com/links/ai0Msvl-tF?ctid=86978b30-1660-4119-8aac-fa62bf388ed6&pbi_source=linkShare)<br>
 ![powerbi](./powerbi.jpg)
 
 
 ## Python Projects
-
-
+Cleaning the Movies dataset with Python Visulazation and Correlation <br>
+Breast Cancer Diagnosis Predictions with Python and comparing algorithms accuracy scores<br>
+Seoul 2021 Car accidents official data preparing for data analysis and more
 
 ## Web Scraping
-
-
-
-
-
-
-
-
-
-
-
-
-## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
-
-
-## Setup
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
-
-Proceed to describe how to install / setup one's local environment / get started with the project.
-
-
-## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
-
-`write-your-code-here`
-
+Web Scraping from Amazon with Microsoft Edge Selenium Python library and and making a csv data file which includes price name etc...
 
 ## Project Status
 R Project is: _in progress_ 
 TensorFlow Project is:  _in progress_ 
 
-
-
-
-
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+[Contact](https://www.linkedin.com/in/furkanbyagiz/) - feel free to contact me!
 
 
 ## Korean
-
+__아직 확인 중__
 
 <!-- Optional -->
 <!-- ## License -->
