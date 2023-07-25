@@ -3,7 +3,7 @@
 > 
 ## Table of Contents
 * [SQL projects](#sql-projects)
-  -Data Cleaning with **MSSQL** 
+  <br>-Data Cleaning with **MSSQL** <br>
   -Preparing Covid datas untill today with **MicrosoftSQL**
 * [Visualization Covid data with **Tableau**](#tableau)
 * [Data Professionals Survey **Power BI** report](#powerbi)
