@@ -16,7 +16,11 @@
 * [Korean](#korean)
 <!-- * [License](#license) -->
 ## SQL Projects
-
+Data Exploration of Covid 19 Dataset in SQL Server
+Dataset includes datas from first covid positive case date to June 17th 2023
+Total Cases vs Total Deaths 
+Total Cases vs Population
+etc...
 
 ## Tableau Project
 
