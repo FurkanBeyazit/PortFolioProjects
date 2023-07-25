@@ -27,6 +27,8 @@ Tableau Public [click here](https://public.tableau.com/app/profile/furkan.yagiz/
 ![tableau](./tableau.jpg)
 
 ## Powerbi Project
+PowerBi app [click here](https://app.powerbi.com/links/ai0Msvl-tF?ctid=86978b30-1660-4119-8aac-fa62bf388ed6&pbi_source=linkShare)<br>
+![powerbi](./powerbi.jpg)
 
 
 ## Python Projects
