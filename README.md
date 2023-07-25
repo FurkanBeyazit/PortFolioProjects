@@ -1,6 +1,5 @@
 # Projects Descriptions
 >This repository hosts the files for my case study from Sql to Python, Tableau to PowerBI, Machine learning and much more
-> 
 ## Table of Contents
 * [SQL projects](#sql-projects)
   <br>-Data Cleaning with **MSSQL** <br>
@@ -8,8 +7,8 @@
 * [Visualization Covid data with **Tableau**](#tableau)
 * [Data Professionals Survey **Power BI** report](#powerbi)
 * [Python Projects](#python-projects)
-  -[Famous Movies dataset finding trends and flow in dataset **Python**]
-  -[Cancer Diagnosis Predictions with **Python Machine Learning**]
+ <br> -[Famous Movies dataset finding trends and flow in dataset **Python**]<br>
+  -[Cancer Diagnosis Predictions with **Python Machine Learning**]<br>
   -[Preparing dataset for further analysis Seoul Car Accident dataset **Python**]
 * [Amazon Web Scraping with **Selenium Python**](#web-scraping)
 * [Project Status](#project-status)
@@ -19,11 +18,18 @@
 ## SQL Projects
 
 
+## Tableau
+
+## PowerBI
+
+
 ## Python Projects
 
 
 
 ## Web Scraping
+
+
 
 
 
