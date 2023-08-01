@@ -23,7 +23,6 @@ Total Cases vs Population <br>
 Nashville Data Cleaning in SQL [click here](https://github.com/FurkanBeyazit/PortFolioProjects/blob/main/Nashville%20Data%20Cleaning%20in%20SQL%20.sql) <br>
 Covid Portfolio Project SQL scripts [click here](https://github.com/FurkanBeyazit/PortFolioProjects/blob/main/Covid%20Portfolio%20Project%20SQL%20scripts.sql)
 
-
 ## Tableau Project
 Dataset is same with Covid project above
 Tableau Public [click here](https://public.tableau.com/app/profile/furkan.yagiz/viz/CovidPortfolioProject_16870698928110/Dashboard1?publish=yes)<br>
