@@ -20,6 +20,8 @@ Data Exploration of Covid 19 Dataset in SQL Server<br>
 Dataset includes datas from first covid positive case date to June 17th 2023<br>
 Total Cases vs Total Deaths <br>
 Total Cases vs Population <br>
+Nashville Data Cleaning in SQL [click here](https://github.com/FurkanBeyazit/PortFolioProjects/blob/main/Nashville%20Data%20Cleaning%20in%20SQL%20.sql)
+Covid Portfolio Project SQL scripts [click here](https://github.com/FurkanBeyazit/PortFolioProjects/blob/main/Covid%20Portfolio%20Project%20SQL%20scripts.sql)
 etc...
 
 ## Tableau Project
