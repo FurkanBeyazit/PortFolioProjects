@@ -45,9 +45,9 @@ Web Scraping from Amazon with Microsoft Edge Selenium Python library and and mak
 [click for selenium python codes](https://github.com/FurkanBeyazit/PortFolioProjects/blob/main/Amazon_Scraping_Selenium.ipynb)
 
 ## R Project Cyclistic Case Study 
-Google Data Analytics certificate study in my aspect
-Huge dataset collected by company named Cyclistic contains bike rides information members and casual riders
-Asked to find out how to act in order to increase membership numbers
+Google Data Analytics certificate study in my aspect<br>
+Huge dataset collected by company named Cyclistic contains bike rides information members and casual riders<br>
+Asked to find out how to act in order to increase membership numbers<br>
 HTML R markdown is ready please [download](https://github.com/FurkanBeyazit/PortFolioProjects/blob/main/Cyclistic_markmark.html) and check it if you please 
 
 ## Project Status
