@@ -1,0 +1,267 @@
+---
+title: "Cyclistic Case Study"
+author: "Furkan Beyazit Yagiz"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# First
+For this project I'll be using R to find trends of the dataset Cyclistic in depth. I'm Furkan.
+Here to explain in my aspect. I will be following the steps of the data analysis process: ask, prepare, process, analyze, share, and act.
+
+## Scenario
+A junior data analyst working in the marketing analyst team at Cyclistic, a bike-share company in Chicago(This is originally a case study for my Google data analytics certificate project).
+What do we know?
+Cyclistic has a fleet of 5,824 bicycles that are geotracked and locked into a network of 692 stations across Chicago. The bikes can be unlocked from one station and returned to any other station in the system anytime. Until now, Cyclistic’s marketing strategy relied on building general awareness and appealing to broad consumer segments. One approach that helped make these things possible was the flexibility of its pricing plans: single-ride passes, full-day passes, and annual memberships. Customers who purchase single-ride or full-day passes are referred to as casual riders. Customers who purchase annual memberships are Cyclistic members.
+
+Cyclistic’s finance analysts have concluded that annual members are much more profitable than casual riders. Although the pricing flexibility helps Cyclistic attract more customers, the director of marketing Lily Moreno believes that maximizing the number of annual members will be key to future growth. Rather than creating a marketing campaign that targets all-new customers, Moreno believes there is a very good chance to convert casual riders into members. She notes that casual riders are already aware of the Cyclistic program and have chosen Cyclistic for their mobility needs.
+
+## Ask
+What's our goal? 
+Company owners think Cyclistic's future success depends on an increase in annual membership, thus the problem here is maximizing annual membership thus the problem here is maximizing annual membership.
+
+## Prepare
+I downloaded a year of data which is From April 2020 to March 2021. Here is the Kaggle [link](https://www.kaggle.com/datasets/mihelic/cyclistic) that company provided.
+
+## Process
+Even though I'm more comfartable with Python. This time I decided to use R to solve the business problems.
+I'll also mention my processing steps.
+
+### Loaded useful libaries
+```{r}
+library(tidyverse) # main package of data science
+library(janitor) #cleaning 
+library(lubridate) # date
+library(RSQLite) # sql 
+library(ggplot2) # grammar of graphics aka visualizing
+#For map and web widgets
+library(leaflet) 
+library(htmlwidgets)
+library(htmltools)
+#In case if your first time using these packages you have to install first using install.packages("")
+```
+
+### the merged our datasets into one data frame
+```{r}
+df1<-read.csv("./2020apr.csv")
+df2<-read.csv("./2020may.csv")
+df3<-read.csv("./2020jun.csv")
+df4<-read.csv("./2020jul.csv")
+df5<-read.csv("./2020aug.csv")
+df6<-read.csv("./2020sep.csv")
+df7<-read.csv("./2020oct.csv")
+df8<-read.csv("./2020nov.csv")
+df9<-read.csv("./2020dec.csv")
+df10<-read.csv("./2021jan.csv")
+df11<-read.csv("./2021feb.csv")
+df12<-read.csv("./2021mar.csv")
+bike_rides <- rbind(df1,df2,df3,df4,df5,df6,df7,df8,df9,df10,df11,df12)
+```
+Getting more info about the data
+```{r}
+str(bike_rides)
+colnames(bike_rides)
+glimpse(bike_rides)
+
+```
+Removing Duplicates
+Checking how many rows are deleted
+```{r}
+nrow(bike_rides)
+bike_rides_nd<- bike_rides[!duplicated(bike_rides$ride_id),]
+print(paste("Removed ",nrow(bike_rides)-nrow(bike_rides_nd),'rows'))
+```
+As we did see above time columns are characters we have to change them into time
+and Creating new columns for further time calculations and analysis
+```{r}
+bike_rides_nd$started_at<- strptime(bike_rides_nd$started_at,format="%Y-%m-%d %H:%M:%S", tz="America/Chicago")
+bike_rides_nd$ended_at<- strptime(bike_rides_nd$ended_at, format="%Y-%m-%d %H:%M:%S", tz="America/Chicago")
+
+# new columns
+bike_rides_nd$date<- as.Date(bike_rides_nd$started_at)
+bike_rides_nd$month<- format(as.Date(bike_rides_nd$started_at),"%m")
+bike_rides_nd$day<- format(as.Date(bike_rides_nd$started_at),"%d")
+bike_rides_nd$year<- format(as.Date(bike_rides_nd$started_at),"%Y")
+bike_rides_nd$day_of_week<- format(as.Date(bike_rides_nd$started_at),"%A")
+
+```
+Finding for how long people were using bikes
+```{r}
+bike_rides_nd$ride_length<- difftime(bike_rides_nd$ended_at,bike_rides_nd$started_at)
+bike_rides_nd$ride_length<- as.numeric(as.character(bike_rides_nd$ride_length))
+str(bike_rides_nd)
+
+##converting ride length into minutes
+bike_rides_nd$ride_length_m<-bike_rides_nd$ride_length/60
+summary(bike_rides_nd$ride_length_m)
+```
+As we have seen above min value is a minus and max value is not correct to solve this we have to remove outliers
+```{r}
+#first removing minus values 
+bike_rides_nd<-bike_rides_nd %>% 
+  filter(ride_length_m >= 1)
+#now IQR outlier removing method
+quartiles<-quantile(bike_rides_nd$ride_length_m,probs=c(.25,.75),na.rm=FALSE)
+IQR<-IQR(bike_rides_nd$ride_length_m) ## q3-q1 = IQR
+lower<-quartiles[1]-IQR*1.5
+upper<-quartiles[2]+IQR*1.5
+
+df<- subset(bike_rides_nd,bike_rides_nd$ride_length_m > lower & bike_rides_nd$ride_length_m < upper)
+
+boxplot(df$ride_length_m)
+summary(df$ride_length_m)
+```
+Data is still looking very big even if we remove nan values so let's remove them.
+```{r}
+sum(is.na(df))
+df<-clean_names(df)
+df<-remove_empty(df)
+df <- df %>% drop_na()
+summary(df)
+```
+## Analyze
+Member vs Casual Riding times
+```{r}
+aggregate(df$ride_length~df$member_casual,FUN=mean)
+aggregate(df$ride_length~df$member_casual,FUN=median)
+aggregate(df$ride_length~df$member_casual,FUN=max)
+aggregate(df$ride_length~df$member_casual,FUN=min)
+```
+User Percentage (member vs casual)
+```{r}
+df %>% 
+  group_by(member_casual) %>% 
+  summarise(count=length(ride_id),"percentage"=(length(ride_id)/nrow(df))*100)
+
+ggplot(df,aes(member_casual,fill=member_casual))+
+  geom_bar()+
+  labs(x="Casuals vs Members",title = "User Distribution")
+```
+Average ride time(minutes) by day for members vs casual
+```{r}
+df$day_of_week<-ordered(df$day_of_week, levels=c("Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday"))
+aggregate(df$ride_length_m~df$member_casual+df$day_of_week,FUN=mean)
+```
+More 
+```{r}
+## Number of rides by Day member vs casual
+
+df %>% 
+  mutate(weekday=wday(started_at,label=TRUE)) %>% 
+  group_by(member_casual,weekday) %>% 
+  summarise(number_of_rides=n(),average_duration=mean(ride_length_m)) %>%
+  arrange(member_casual,weekday) %>% 
+  ggplot(aes(x=weekday,y=number_of_rides,fill=member_casual))+
+  geom_col(position='dodge')
+
+## Usage by Month
+
+df %>% 
+  group_by(member_casual,month) %>% 
+  summarise(number_of_rides=n(),average_duration=mean(ride_length_m)) %>% 
+  arrange(member_casual,month) %>% 
+  ggplot(aes(x=month,y=number_of_rides,fill=member_casual))+
+  geom_col(position='dodge')+labs(title='Total usage by month member vs casual',x=" th Month",y="Number of rides")
+
+
+## bike type usage members vs casual
+df %>% 
+  group_by(rideable_type,member_casual) %>% 
+  summarize(mean_min=mean(ride_length_m))
+
+dftype<- df %>% 
+  group_by(rideable_type,member_casual) %>% 
+  summarize(mean_min=mean(ride_length_m))
+
+dftype %>% 
+  ggplot(aes(x=rideable_type,y=mean_min,fill=member_casual))+
+  geom_col(position = position_dodge(),width = 0.6)+
+  labs(x='Type',y="mean",fill='Membership')+
+  ggtitle("Mean Trip Duration by Type of Bike")
+
+
+## Total usage in Specific hours member vs casual
+df$hour <- format(df$started_at, "%H")
+table(df$hour,df$member_casual)
+dftod<- df %>% 
+  group_by(hour,member_casual) %>% 
+  summarize(n=n()) %>% 
+  mutate_if(is.numeric,round,2) %>% 
+  print(n=nrow(24))
+
+dftod %>% 
+  ggplot()+
+  geom_line(aes(x=hour,y=n,color=member_casual,group=member_casual),size=3)+
+  labs(x = "Time of Day", y = "Number of Trips", fill = "Membership Type") +
+  ggtitle("Number of Trips per Time of Day")
+
+```
+Cool Looking Station Map View Analysis
+```{r}
+## Stations Map view
+
+dfmap<-df %>% 
+  group_by(start_station_name) %>%
+  summarize(n=n())
+  dfmap[order(dfmap$n,decreasing = TRUE),]
+  
+  
+
+
+## created Dataframe with coordinates
+dfcoor<- df %>% 
+  select(start_station_name,start_lat,start_lng) %>% 
+  group_by(start_station_name) %>% 
+  mutate(num_trips=n()) %>% 
+  distinct(start_station_name,.keep_all = TRUE)
+
+dfcoor<- dfcoor[order(-dfcoor$num_trips),]
+
+map_bins <- seq(0, 50000, by = 5000)
+
+my_palette <- colorBin(palette ="viridis", domain = dfcoor$num_trips, na.color = "transparent", bins = map_bins, reverse = TRUE)
+
+
+# set text for interactive
+map_text <- paste("Station name: ", dfcoor$start_station_name, "<br/>","Number of trips: ", dfcoor$num_trips, sep = "") %>%
+  lapply(htmltools::HTML)
+
+
+# widget 
+trips_per<-leaflet(dfcoor) %>% 
+  addTiles() %>%
+#set Chicago coordinates
+setView(lng=-87.6298,lat=41.8781,zoom=10.5) %>% 
+
+#set map style
+addProviderTiles("Esri.WorldGrayCanvas") %>% 
+
+  
+#add Circles for each station
+  addCircleMarkers(~start_lng,~start_lat,fillColor = ~my_palette(num_trips),fillOpacity = 0.6,color='white',radius=6,stroke=FALSE,label = map_text,labelOptions = labelOptions(style = list("font-weight"="normal",padding="3px 8px"),textsize = "13px",direction = "auto")) %>% 
+  
+#add legend.
+  addLegend( 
+    pal = my_palette, 
+    values = ~ num_trips, 
+    opacity = 0.8,
+    title = "Number of Trips", 
+    position = "bottomright")  
+
+#view map.
+trips_per
+```
+## Share
+* In order to visualize my findings about the dataset I used ggplot to visualize them 
+* Understood casual bike riders and members preferences
+* Map is also will help me show locations at ease
+
+## Act
+* Members approximately 63% of the dataset meanwhile casual users are just 37%
+* August had highest number of rides and the weekday with the highest number of rides is Saturday
+* Members ride more on the weekdays
+* Casual riders have more longer durations than members 
+* Members are tends to use to commute according to hour analysis the spike in 6am and 6pm explains that
