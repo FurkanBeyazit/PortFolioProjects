@@ -43,8 +43,13 @@ Seoul 2021 Car accidents official data preparing for data analysis [click here](
 Web Scraping from Amazon with Microsoft Edge Selenium Python library and and making a csv data file which includes price name etc... <br>
 [click for selenium python codes](https://github.com/FurkanBeyazit/PortFolioProjects/blob/main/Amazon_Scraping_Selenium.ipynb)
 
+## R Project Cyclistic Case Study 
+Google Data Analytics certificate study in my aspect
+Huge dataset collected by company named Cyclistic contains bike rides information members and casual riders
+Asked to find out how to act in order to increase membership numbers
+HTML R markdown is ready please [download](https://github.com/FurkanBeyazit/PortFolioProjects/blob/main/Cyclistic_markmark.html) and check it if you please 
+
 ## Project Status
-R Project is: _in progress_ <br>
 TensorFlow Project is:  _in progress_ 
 
 ## Contact
