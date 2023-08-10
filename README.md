@@ -38,7 +38,7 @@ PowerBi app [click here](https://app.powerbi.com/links/ai0Msvl-tF?ctid=86978b30-
 ## Python Projects
 Cleaning the Movies dataset with Python Visulazation and Correlation [click here](https://github.com/FurkanBeyazit/PortFolioProjects/blob/main/PortfolioProject%20Movies%20Data%20manipulation.ipynb) <br>
 Breast Cancer Diagnosis Predictions with Python and comparing algorithms accuracy scores [click here](https://github.com/FurkanBeyazit/PortFolioProjects/blob/main/ML%20Breast%20Cancer%20Diagnosis%20%20Predictions%20.ipynb) <br>
-Seoul 2021 Car accidents official data preparing for data analysis [click here](https://github.com/FurkanBeyazit/PortFolioProjects/blob/main/%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%EB%8B%A4%EC%9D%B4%ED%84%B0%20%EC%A3%BC%EB%B9%84%2C%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%97%90%EC%84%9C%20%EC%9D%98%EB%AF%B8%20%EC%B0%BE%EA%B8%B0%20.ipynb) and more
+Seoul 2021 Car accidents official data preparing for data analysis and more [click here](https://github.com/FurkanBeyazit/PortFolioProjects/blob/main/%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%EB%8B%A4%EC%9D%B4%ED%84%B0%20%EC%A3%BC%EB%B9%84%2C%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%97%90%EC%84%9C%20%EC%9D%98%EB%AF%B8%20%EC%B0%BE%EA%B8%B0%20.ipynb)
 
 ## Web Scraping
 Web Scraping from Amazon with Microsoft Edge Selenium Python library and and making a csv data file which includes price name etc... <br>
