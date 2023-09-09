@@ -12,6 +12,7 @@
   -Preparing dataset for further analysis Seoul Car Accident dataset **Python**
 * [Amazon Web Scraping with **Selenium Python**](#web-scraping)
 * [R Project](#r-project-cyclistic-case-study)
+* [IBM Cognos Dashboard](#ibm-dashboard)
 * [Project Status](#project-status)
 * [Contact](#contact)
 * [Korean](#한국어-설명하기)
@@ -49,6 +50,12 @@ Google Data Analytics certificate study in my aspect<br>
 Huge dataset collected by company named Cyclistic contains bike rides information members and casual riders<br>
 Asked to find out how to act in order to increase membership numbers<br>
 HTML R markdown is ready please [download](https://github.com/FurkanBeyazit/PortFolioProjects/blob/main/Cyclistic_markmark.html) and check it if you please 
+
+## IBM Cognos Dashboard
+IBM sample dataset (Car sale report) of automative industry<br>
+IBM Analytics [click here](https://shorturl.at/bpqHN)<br>
+![IBM Cognos Dashboard](./ibm1.jpg)
+![IBM Cognos Dashboard](./ibm2.jpg)
 
 ## Project Status
 TensorFlow Project is:  _in progress_ 
