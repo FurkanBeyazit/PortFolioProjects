@@ -12,7 +12,7 @@
   -Preparing dataset for further analysis Seoul Car Accident dataset **Python**
 * [Amazon Web Scraping with **Selenium Python**](#web-scraping)
 * [R Project](#r-project-cyclistic-case-study)
-* [IBM Cognos Dashboard](#ibm-dashboard)
+* [IBM Cognos Dashboard](#ibm-cognos-dashboard)
 * [Project Status](#project-status)
 * [Contact](#contact)
 * [Korean](#한국어-설명하기)
